@@ -1,0 +1,7 @@
+INSTALL
+
+To install just checkout the code.  Everything runs with sqlite.  All you need to do is download a 
+verison of the Zend Framework library at http://framework.zend.com/
+
+
+
