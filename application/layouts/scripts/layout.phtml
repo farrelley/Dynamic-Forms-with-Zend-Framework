@@ -1,0 +1,45 @@
+<html>
+<head>
+ <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script> 
+ <script type="text/JavaScript"> 
+$(document).ready(function(){
+
+	$("#default-label").hide();
+	$("#default-element").hide();
+	var counter = parseInt($("#counter").val());
+	
+	$("#omg").click(function(){ 
+
+		console.log($("#counter").val());
+		console.log($("#fieldset-default > dl"));
+		console.log($("#fieldset-default > dl"));
+		
+		var newEl = $('#fieldset-default > dl').clone();
+		console.log(newEl);
+		$("#base-label", newEl).attr("id", "new" + counter + "-label");
+		$("#base-element", newEl).attr("id", "new" + counter + "-element");
+		$("#fieldset-base", newEl).attr("id", "fieldset-new" + counter);
+		
+		$("#key-label > label", newEl).attr("for", "new-" + counter + "-key");
+		$("#key-element> input", newEl).attr("id", "new-" + counter + "-key");
+		$("#key-element> input", newEl).attr("name", "new[" + counter + "][key]");
+
+		$("#value-label > label", newEl).attr("for", "new-" + counter + "-value");
+		$("#value-element> input", newEl).attr("id", "new-" + counter + "-value");
+		$("#value-element> input", newEl).attr("name", "new[" + counter + "][value]");
+		
+		$(newEl).children().each(
+			function(i, e) {
+				$(e).appendTo("#fieldset-new > dl");
+			}
+		);
+		
+		$("#counter").val(++counter);
+	});
+});
+</script>
+</head>
+<body>
+	<?php echo $this->layout()->content; ?>
+</body>
+</html>

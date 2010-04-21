@@ -1,0 +1,27 @@
+<p>When you submit it will acutally just spit out the form values.
+<ul>
+	<li>metadata - Array of current values</li>
+	<li>new - Array of new values that you added</li>
+	<li>default - You can ingnore this one.  It's the subform that we clone with jquery to 
+				  add new key/values.dr</li>
+</ul>
+</p>
+
+<a href="
+	<?php echo $this->url(array(
+		'controller' => 'person',
+		'action' => 'add',
+		'module' => 'default',
+	), 'default', true); ?>
+">Add Person</a>
+
+
+<p>Here is what an update dynamic form looks like</p>
+<a href="
+	<?php echo $this->url(array(
+		'controller' => 'person',
+		'action' => 'update',
+		'module' => 'default',
+		'id' => 1,
+	), 'default', true); ?>
+">Update Shaun's Record</a>
